@@ -8,7 +8,7 @@ const userRouter = require('./user');
 const router = express.Router();
 
 router.use('/courses', authGuard, courseRouter);
-router.use('/students', studentRouter);
+router.use('/students', authGuard, studentRouter);
 router.use('/users', userRouter);
 router.use('/auth', authRouter);
 // /login
